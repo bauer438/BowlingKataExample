@@ -12,6 +12,15 @@ namespace BowlingKataExample
         {
         }
 
+        public void roll(int pins)
+        {
+        }
+
+        public int score()
+        {
+            return 0;
+        }
+
         static void Main(string[] args)
         {
         }
