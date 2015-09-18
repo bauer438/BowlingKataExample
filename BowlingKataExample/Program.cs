@@ -8,17 +8,21 @@ namespace BowlingKataExample
 {
     public class Game
     {
+        private int total;
+
         public Game()
         {
+            total = 0;
         }
 
         public void roll(int pins)
         {
+            total += pins;
         }
 
         public int score()
         {
-            return 0;
+            return total;
         }
 
         static void Main(string[] args)
