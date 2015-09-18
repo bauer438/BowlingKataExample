@@ -18,31 +18,43 @@ namespace BowlingGameUnitTests
         [TestMethod]
         public void testGutterGame()
         {
-            for (int i = 0; i < 20; i++)
-            {
-                g.roll(0);
-            }
+            rollMany(20, 0);
             Assert.AreEqual(0, g.score());
         }
 
         [TestMethod]
         public void testAllOnes()
         {
-            for (int i = 0; i < 20; i++)
-            {
-                g.roll(1);
-            }
+            rollMany(20, 1);
             Assert.AreEqual(20, g.score());
         }
 
-        //[TestMethod]
-        //public void testAllStrikes()
-        //{
-        //    for (int i = 0; i < 12; i++)
-        //    {
-        //        g.roll(10);
-        //    }
-        //    Assert.AreEqual(300, g.score());
-        //}
+        [TestMethod]
+        public void testOneSpare()
+        {
+            g.roll(5);
+            g.roll(5);
+            g.roll(3);
+            rollMany(17, 0);
+            Assert.AreEqual(16, g.score());
+        }
+
+        [TestMethod]
+        public void testAllStrikes()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                g.roll(10);
+            }
+            Assert.AreEqual(300, g.score());
+        }
+
+        private void rollMany(int n, int pins)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                g.roll(pins);
+            }
+        }
     }
 }
