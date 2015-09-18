@@ -32,11 +32,37 @@ namespace BowlingGameUnitTests
         [TestMethod]
         public void testOneSpare()
         {
-            g.roll(5);
-            g.roll(5);
+            rollSpare(5, 5);
             g.roll(3);
             rollMany(17, 0);
             Assert.AreEqual(16, g.score());
+        }
+
+        [TestMethod]
+        public void testOneStrike()
+        {
+            rollStrike();
+            g.roll(5);
+            g.roll(2);
+            rollMany(17, 0);
+            Assert.AreEqual(24, g.score());
+        }
+
+        [TestMethod]
+        public void testDutch200Game()
+        {
+            rollStrike();
+            rollSpare(0, 10);
+            rollStrike();
+            rollSpare(0, 10);
+            rollStrike();
+            rollSpare(0, 10);
+            rollStrike();
+            rollSpare(0, 10);
+            rollStrike();
+            rollSpare(0, 10);
+            rollStrike();
+            Assert.AreEqual(200, g.score());
         }
 
         [TestMethod]
@@ -44,7 +70,7 @@ namespace BowlingGameUnitTests
         {
             for (int i = 0; i < 12; i++)
             {
-                g.roll(10);
+                rollStrike();
             }
             Assert.AreEqual(300, g.score());
         }
@@ -55,6 +81,17 @@ namespace BowlingGameUnitTests
             {
                 g.roll(pins);
             }
+        }
+
+        private void rollStrike()
+        {
+            g.roll(10);
+        }
+
+        private void rollSpare(int roll1, int roll2)
+        {
+            g.roll(roll1);
+            g.roll(roll2);
         }
     }
 }
