@@ -83,10 +83,7 @@ namespace BowlingGameUnitTests
             }
         }
 
-        private void rollStrike()
-        {
-            g.roll(10);
-        }
+        private void rollStrike() => g.roll(10);
 
         private void rollSpare(int roll1, int roll2)
         {

@@ -20,10 +20,7 @@ namespace BowlingKataExample
             currentRoll = 0;
         }
 
-        public void roll(int pins)
-        {
-            rolls[currentRoll++] = pins;
-        }
+        public void roll(int pins) => rolls[currentRoll++] = pins;
 
         public int score()
         {
@@ -50,15 +47,9 @@ namespace BowlingKataExample
             return total;
         }
 
-        private bool isSpare(int frameIndex)
-        {
-            return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
-        }
+        private bool isSpare(int frameIndex) => rolls[frameIndex] + rolls[frameIndex + 1] == 10;
 
-        private bool isStrike(int frameIndex)
-        {
-            return rolls[frameIndex] == 10;
-        }
+        private bool isStrike(int frameIndex) => rolls[frameIndex] == 10;
 
         static void Main(string[] args)
         {
