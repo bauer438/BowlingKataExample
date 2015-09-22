@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BowlingKataExample
 {
+    //Game Class
     public class Game
     {
         private int total;
