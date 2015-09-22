@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BowlingKataExample
 {
+    //Generic Comment to cause merge conflict
     public class Game
     {
         private int total;
