@@ -8,7 +8,7 @@ namespace BowlingKataExample
         static void Main(string[] args)
         {
             Game myGame = new Game();
-            Game yourGame = new Game();
+
             string rolls;
             string[] pins = new string[21];
 
